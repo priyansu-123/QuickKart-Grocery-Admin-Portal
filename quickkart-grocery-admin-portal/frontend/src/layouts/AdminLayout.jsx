@@ -19,6 +19,7 @@
 // ============================================================
 import React from "react";
 import  { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 
 import {
   Avatar,
@@ -91,6 +92,7 @@ const AdminLayout = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
 
   // ----------------------------------------------------------
@@ -204,18 +206,16 @@ const AdminLayout = () => {
   // ----------------------------------------------------------
 
   const handleProfileAction = ({ key }) => {
-
     if (key === "profile") {
       navigate("/profile");
     }
 
     if (key === "logout") {
+      logout();
 
-      // Remove the mock login information.
-      localStorage.removeItem("quickkart_user");
-
-      // Send the user back to the login page.
-      navigate("/login");
+      navigate("/login", {
+        replace: true,
+      });
     }
   };
 
@@ -564,7 +564,7 @@ const AdminLayout = () => {
                 <div className="quickkart-profile-info">
 
                   <span className="quickkart-profile-name">
-                    Admin User
+                    {user?.name || "Admin User"}
                   </span>
 
                   <span className="quickkart-profile-role">

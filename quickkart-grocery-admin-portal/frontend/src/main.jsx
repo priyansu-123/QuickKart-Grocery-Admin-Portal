@@ -5,4 +5,12 @@ import App from "./App";
 import {AuthProvider} from "./context/AuthContext";
 import "./styles/global.css";
 // BrowserRouter enables React page navigation without full reloads.
-ReactDOM.createRoot(document.getElementById("root")).render(<React.StrictMode><BrowserRouter><AuthProvider><App/></AuthProvider></BrowserRouter></React.StrictMode>);
+ReactDOM.createRoot(document.getElementById("root")).render(
+<React.StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <App/>
+      </AuthProvider>
+    </BrowserRouter>
+</React.StrictMode>        
+);
