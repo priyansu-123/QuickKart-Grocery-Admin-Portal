@@ -1,0 +1,1588 @@
+/* =========================================================
+   QUICKKART - DARK PREMIUM ADMIN PORTAL
+   Global stylesheet
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. GLOBAL DESIGN VARIABLES
+   --------------------------------------------------------- */
+
+:root {
+  --qk-background: #111318;
+  --qk-background-soft: #151821;
+
+  --qk-sidebar: #171922;
+  --qk-sidebar-hover: #202330;
+
+  --qk-card: #1c1f29;
+  --qk-card-hover: #242835;
+
+  --qk-primary: #8b5cf6;
+  --qk-primary-dark: #7044d4;
+  --qk-primary-light: #a78bfa;
+
+  --qk-blue: #3b82f6;
+  --qk-green: #22c55e;
+  --qk-orange: #f59e0b;
+  --qk-red: #ef4444;
+
+  --qk-text: #f8fafc;
+  --qk-text-secondary: #94a3b8;
+  --qk-text-muted: #64748b;
+
+  --qk-border: #2a2e3a;
+  --qk-border-light: #343947;
+
+  --qk-radius-small: 8px;
+  --qk-radius: 12px;
+  --qk-radius-large: 18px;
+
+  --qk-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  --qk-shadow-purple: 0 8px 30px rgba(139, 92, 246, 0.18);
+
+  --qk-transition: 0.25s ease;
+}
+
+/* ---------------------------------------------------------
+   2. BASIC RESET
+   --------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  background: var(--qk-background);
+  color: var(--qk-text);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------
+   3. MAIN ANT DESIGN LAYOUT
+   --------------------------------------------------------- */
+
+.quickkart-layout {
+  min-height: 100vh;
+  background: var(--qk-background) !important;
+}
+
+.quickkart-main-layout {
+  min-height: 100vh;
+  background: var(--qk-background) !important;
+}
+
+/* ---------------------------------------------------------
+   4. SIDEBAR
+   --------------------------------------------------------- */
+
+.quickkart-sidebar {
+  background: var(--qk-sidebar) !important;
+  border-right: 1px solid var(--qk-border);
+
+  box-shadow:
+    8px 0 30px rgba(0, 0, 0, 0.15);
+
+  position: relative;
+  z-index: 20;
+}
+
+.quickkart-sidebar .ant-layout-sider-children {
+  background: var(--qk-sidebar) !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------------------------------
+   5. BRAND / LOGO
+   --------------------------------------------------------- */
+
+.quickkart-brand {
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid var(--qk-border);
+
+  cursor: pointer;
+
+  transition: var(--qk-transition);
+}
+
+.quickkart-brand:hover {
+  background: var(--qk-sidebar-hover);
+}
+
+.quickkart-brand-icon {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--qk-primary),
+      var(--qk-blue)
+    );
+
+  color: white;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 20px rgba(139, 92, 246, 0.28);
+}
+
+.quickkart-brand-text {
+  margin-left: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.quickkart-brand-name {
+  color: var(--qk-text) !important;
+
+  font-size: 18px !important;
+  font-weight: 700 !important;
+
+  line-height: 1.2;
+  margin: 0 !important;
+}
+
+.quickkart-brand-subtitle {
+  color: var(--qk-text-muted) !important;
+
+  font-size: 11px !important;
+
+  margin-top: 4px;
+
+  letter-spacing: 0.4px;
+}
+
+/* ---------------------------------------------------------
+   6. SIDEBAR MENU SECTIONS
+   --------------------------------------------------------- */
+
+.quickkart-menu-section {
+  margin-top: 22px;
+}
+
+.quickkart-menu-title {
+  padding: 0 22px;
+
+  margin-bottom: 8px;
+
+  color: var(--qk-text-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+}
+
+.quickkart-menu {
+  background: transparent !important;
+  border: none !important;
+}
+
+.quickkart-menu.ant-menu {
+  background: transparent !important;
+}
+
+.quickkart-menu .ant-menu-item {
+  height: 46px;
+
+  margin: 5px 12px !important;
+
+  padding-left: 15px !important;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--qk-text-secondary) !important;
+
+  border-radius: 10px;
+
+  transition: var(--qk-transition);
+}
+
+.quickkart-menu .ant-menu-item:hover {
+  background: var(--qk-sidebar-hover) !important;
+  color: var(--qk-text) !important;
+}
+
+.quickkart-menu .ant-menu-item-selected {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0.22),
+      rgba(139, 92, 246, 0.08)
+    ) !important;
+
+  color: var(--qk-primary-light) !important;
+
+  box-shadow:
+    inset 3px 0 0 var(--qk-primary);
+}
+
+.quickkart-menu .ant-menu-item-selected::after {
+  display: none !important;
+}
+
+.quickkart-menu .ant-menu-item .ant-menu-item-icon {
+  color: inherit !important;
+  font-size: 17px;
+}
+
+.quickkart-menu .ant-menu-item-selected .ant-menu-item-icon {
+  color: var(--qk-primary-light) !important;
+}
+
+/* ---------------------------------------------------------
+   7. SIDEBAR STATUS CARD
+   --------------------------------------------------------- */
+
+.quickkart-sidebar-card {
+  margin: auto 14px 18px;
+
+  padding: 14px;
+
+  border: 1px solid var(--qk-border);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1f2230,
+      #181a23
+    );
+
+  box-shadow: var(--qk-shadow);
+}
+
+.sidebar-card-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(34, 197, 94, 0.12);
+
+  color: var(--qk-green);
+
+  margin-bottom: 10px;
+}
+
+.sidebar-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-card-title {
+  color: var(--qk-text);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sidebar-card-status {
+  display: flex;
+  align-items: center;
+
+  margin-top: 5px;
+
+  color: var(--qk-text-muted);
+
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  margin-right: 6px;
+
+  border-radius: 50%;
+
+  background: var(--qk-green);
+
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.7);
+}
+
+/* ---------------------------------------------------------
+   8. SIDEBAR COLLAPSE BUTTON
+   --------------------------------------------------------- */
+
+.sidebar-collapse-button {
+  position: absolute;
+
+  right: -14px;
+  bottom: 28px;
+
+  width: 28px;
+  height: 28px;
+
+  border: 1px solid var(--qk-border) !important;
+
+  border-radius: 50% !important;
+
+  background: var(--qk-card) !important;
+
+  color: var(--qk-text-secondary) !important;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 30;
+
+  box-shadow: var(--qk-shadow);
+
+  transition: var(--qk-transition);
+}
+
+.sidebar-collapse-button:hover {
+  background: var(--qk-primary) !important;
+  border-color: var(--qk-primary) !important;
+  color: white !important;
+
+  transform: scale(1.08);
+}
+
+/* ---------------------------------------------------------
+   9. HEADER
+   --------------------------------------------------------- */
+
+.quickkart-header {
+  height: 76px !important;
+
+  padding: 0 26px !important;
+
+  background: rgba(17, 19, 24, 0.94) !important;
+
+  border-bottom: 1px solid var(--qk-border);
+
+  display: flex;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 15;
+
+  backdrop-filter: blur(14px);
+}
+
+.quickkart-header-left {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+}
+
+.header-breadcrumb-area {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.quickkart-page-title {
+  color: var(--qk-text) !important;
+
+  font-size: 20px !important;
+  font-weight: 700 !important;
+
+  margin: 0 !important;
+}
+
+/* ---------------------------------------------------------
+   10. BREADCRUMB
+   --------------------------------------------------------- */
+
+.header-breadcrumb-area .ant-breadcrumb {
+  font-size: 11px;
+}
+
+.header-breadcrumb-area .ant-breadcrumb-link {
+  color: var(--qk-text-muted) !important;
+}
+
+.header-breadcrumb-area .ant-breadcrumb-separator {
+  color: var(--qk-text-muted) !important;
+}
+
+/* ---------------------------------------------------------
+   11. HEADER RIGHT SIDE
+   --------------------------------------------------------- */
+
+.quickkart-header-right {
+  display: flex;
+  align-items: center;
+
+  margin-left: auto;
+}
+
+.quickkart-search {
+  width: 230px;
+
+  margin-right: 10px;
+}
+
+.quickkart-search.ant-input-affix-wrapper {
+  background: var(--qk-card) !important;
+
+  border: 1px solid var(--qk-border) !important;
+
+  border-radius: 9px !important;
+
+  box-shadow: none !important;
+}
+
+.quickkart-search.ant-input-affix-wrapper:hover,
+.quickkart-search.ant-input-affix-wrapper:focus-within {
+  border-color: var(--qk-primary) !important;
+}
+
+.quickkart-search input {
+  background: transparent !important;
+  color: var(--qk-text) !important;
+}
+
+.quickkart-search input::placeholder {
+  color: var(--qk-text-muted) !important;
+}
+
+.quickkart-search .anticon {
+  color: var(--qk-text-muted) !important;
+}
+
+.header-icon-button {
+  width: 40px;
+  height: 40px;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--qk-border) !important;
+
+  border-radius: 9px !important;
+
+  background: var(--qk-card) !important;
+
+  color: var(--qk-text-secondary) !important;
+
+  transition: var(--qk-transition);
+}
+
+.header-icon-button:hover {
+  background: var(--qk-card-hover) !important;
+
+  border-color: var(--qk-primary) !important;
+
+  color: var(--qk-primary-light) !important;
+}
+
+.header-divider {
+  height: 28px !important;
+
+  border-color: var(--qk-border) !important;
+
+  margin: 0 14px !important;
+}
+
+/* ---------------------------------------------------------
+   12. PROFILE BUTTON
+   --------------------------------------------------------- */
+
+.quickkart-profile-button {
+  display: flex;
+  align-items: center;
+
+  padding: 5px 8px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: var(--qk-transition);
+}
+
+.quickkart-profile-button:hover {
+  background: var(--qk-card);
+}
+
+.quickkart-avatar {
+  background:
+    linear-gradient(
+      135deg,
+      var(--qk-primary),
+      var(--qk-blue)
+    ) !important;
+
+  color: white !important;
+
+  font-weight: 700;
+}
+
+.quickkart-profile-info {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 9px;
+}
+
+.quickkart-profile-name {
+  color: var(--qk-text);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.quickkart-profile-role {
+  color: var(--qk-text-muted);
+
+  font-size: 10px;
+
+  margin-top: 2px;
+}
+
+.profile-arrow {
+  margin-left: 8px;
+
+  color: var(--qk-text-muted);
+}
+
+/* ---------------------------------------------------------
+   13. MAIN CONTENT
+   --------------------------------------------------------- */
+
+.quickkart-content {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(139, 92, 246, 0.08),
+      transparent 30%
+    ),
+    var(--qk-background) !important;
+
+  min-height: calc(100vh - 76px);
+}
+
+.quickkart-content-inner {
+  padding: 28px;
+
+  min-height: calc(100vh - 76px);
+}
+
+/* ---------------------------------------------------------
+   14. FOOTER
+   --------------------------------------------------------- */
+
+.quickkart-footer {
+  padding: 18px 28px !important;
+
+  background: var(--qk-background) !important;
+
+  border-top: 1px solid var(--qk-border);
+
+  color: var(--qk-text-muted) !important;
+
+  font-size: 11px;
+
+  text-align: center;
+}
+
+/* ---------------------------------------------------------
+   15. ANT DESIGN CARDS
+   --------------------------------------------------------- */
+
+.ant-card {
+  background: var(--qk-card) !important;
+
+  border: 1px solid var(--qk-border) !important;
+
+  border-radius: var(--qk-radius) !important;
+
+  color: var(--qk-text) !important;
+
+  box-shadow: none;
+
+  transition:
+    transform var(--qk-transition),
+    border-color var(--qk-transition),
+    box-shadow var(--qk-transition);
+}
+
+.ant-card:hover {
+  border-color: var(--qk-border-light) !important;
+}
+
+.ant-card-head {
+  background: transparent !important;
+
+  border-bottom: 1px solid var(--qk-border) !important;
+}
+
+.ant-card-head-title {
+  color: var(--qk-text) !important;
+}
+
+.ant-card-extra {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-card-body {
+  color: var(--qk-text) !important;
+}
+
+/* ---------------------------------------------------------
+   16. TYPOGRAPHY
+   --------------------------------------------------------- */
+
+.ant-typography {
+  color: var(--qk-text) !important;
+}
+
+.ant-typography-secondary {
+  color: var(--qk-text-secondary) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--qk-text);
+}
+
+p {
+  color: var(--qk-text-secondary);
+}
+
+/* ---------------------------------------------------------
+   17. PRIMARY BUTTONS
+   --------------------------------------------------------- */
+
+.ant-btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      var(--qk-primary),
+      var(--qk-primary-dark)
+    ) !important;
+
+  border-color: var(--qk-primary) !important;
+
+  color: white !important;
+
+  border-radius: 8px !important;
+
+  box-shadow:
+    0 6px 18px rgba(139, 92, 246, 0.18);
+
+  font-weight: 600;
+}
+
+.ant-btn-primary:hover {
+  background:
+    linear-gradient(
+      135deg,
+      var(--qk-primary-light),
+      var(--qk-primary)
+    ) !important;
+
+  border-color: var(--qk-primary-light) !important;
+
+  color: white !important;
+
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------
+   18. DEFAULT BUTTONS
+   --------------------------------------------------------- */
+
+.ant-btn-default {
+  background: var(--qk-card) !important;
+
+  border-color: var(--qk-border) !important;
+
+  color: var(--qk-text-secondary) !important;
+
+  border-radius: 8px !important;
+}
+
+.ant-btn-default:hover {
+  background: var(--qk-card-hover) !important;
+
+  border-color: var(--qk-primary) !important;
+
+  color: var(--qk-primary-light) !important;
+}
+
+.ant-btn-text {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-btn-text:hover {
+  color: var(--qk-text) !important;
+
+  background: var(--qk-card-hover) !important;
+}
+
+/* ---------------------------------------------------------
+   19. INPUTS
+   --------------------------------------------------------- */
+
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-input-number,
+.ant-picker,
+.ant-select-selector,
+.ant-input-number-input {
+  background: #151821 !important;
+
+  border-color: var(--qk-border) !important;
+
+  color: var(--qk-text) !important;
+
+  border-radius: 8px !important;
+}
+
+.ant-input:hover,
+.ant-input-affix-wrapper:hover,
+.ant-input-number:hover,
+.ant-picker:hover,
+.ant-select-selector:hover {
+  border-color: var(--qk-primary) !important;
+}
+
+.ant-input:focus,
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused,
+.ant-input-number:focus,
+.ant-picker-focused,
+.ant-select-focused .ant-select-selector {
+  border-color: var(--qk-primary) !important;
+
+  box-shadow:
+    0 0 0 2px rgba(139, 92, 246, 0.12) !important;
+}
+
+.ant-input::placeholder,
+.ant-input-number-input::placeholder {
+  color: var(--qk-text-muted) !important;
+}
+
+.ant-input-prefix,
+.ant-input-suffix {
+  color: var(--qk-text-muted) !important;
+}
+
+/* ---------------------------------------------------------
+   20. SELECT
+   --------------------------------------------------------- */
+
+.ant-select-selection-item {
+  color: var(--qk-text) !important;
+}
+
+.ant-select-selection-placeholder {
+  color: var(--qk-text-muted) !important;
+}
+
+.ant-select-arrow {
+  color: var(--qk-text-muted) !important;
+}
+
+/* ---------------------------------------------------------
+   21. DROPDOWNS
+   --------------------------------------------------------- */
+
+.ant-dropdown,
+.ant-select-dropdown,
+.ant-picker-dropdown {
+  background: var(--qk-card) !important;
+
+  border: 1px solid var(--qk-border) !important;
+
+  box-shadow: var(--qk-shadow) !important;
+}
+
+.ant-dropdown-menu,
+.ant-select-dropdown .ant-select-item {
+  background: transparent !important;
+}
+
+.ant-dropdown-menu-item,
+.ant-dropdown-menu-submenu-title,
+.ant-select-item {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-dropdown-menu-item:hover,
+.ant-select-item-option-active {
+  background: var(--qk-card-hover) !important;
+
+  color: var(--qk-text) !important;
+}
+
+.ant-select-item-option-selected {
+  background: rgba(139, 92, 246, 0.15) !important;
+
+  color: var(--qk-primary-light) !important;
+}
+
+/* ---------------------------------------------------------
+   22. TABLE
+   --------------------------------------------------------- */
+
+.ant-table-wrapper {
+  color: var(--qk-text) !important;
+}
+
+.ant-table {
+  background: transparent !important;
+
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-table-container {
+  border: 1px solid var(--qk-border);
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+  background: #181b24 !important;
+
+  color: var(--qk-text-secondary) !important;
+
+  border-bottom: 1px solid var(--qk-border) !important;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.3px;
+}
+
+.ant-table-tbody > tr > td {
+  background: var(--qk-card) !important;
+
+  color: var(--qk-text-secondary) !important;
+
+  border-bottom: 1px solid var(--qk-border) !important;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: var(--qk-card-hover) !important;
+}
+
+.ant-table-cell {
+  border-color: var(--qk-border) !important;
+}
+
+.ant-table-placeholder {
+  background: var(--qk-card) !important;
+}
+
+/* ---------------------------------------------------------
+   23. TAGS
+   --------------------------------------------------------- */
+
+.ant-tag {
+  border-radius: 6px !important;
+
+  border-color: var(--qk-border) !important;
+
+  background: #242833 !important;
+
+  color: var(--qk-text-secondary) !important;
+}
+
+/* ---------------------------------------------------------
+   24. PAGINATION
+   --------------------------------------------------------- */
+
+.ant-pagination-item {
+  background: var(--qk-card) !important;
+
+  border-color: var(--qk-border) !important;
+}
+
+.ant-pagination-item a {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-pagination-item-active {
+  background: var(--qk-primary) !important;
+
+  border-color: var(--qk-primary) !important;
+}
+
+.ant-pagination-item-active a {
+  color: white !important;
+}
+
+.ant-pagination-prev button,
+.ant-pagination-next button {
+  color: var(--qk-text-secondary) !important;
+
+  background: var(--qk-card) !important;
+
+  border-radius: 7px;
+}
+
+/* ---------------------------------------------------------
+   25. MODAL
+   --------------------------------------------------------- */
+
+.ant-modal-content {
+  background: var(--qk-card) !important;
+
+  border: 1px solid var(--qk-border) !important;
+
+  border-radius: 16px !important;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45) !important;
+}
+
+.ant-modal-header {
+  background: transparent !important;
+
+  border-bottom: 1px solid var(--qk-border) !important;
+}
+
+.ant-modal-title {
+  color: var(--qk-text) !important;
+}
+
+.ant-modal-close {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-modal-body {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-modal-footer {
+  border-top: 1px solid var(--qk-border) !important;
+}
+
+/* ---------------------------------------------------------
+   26. FORM
+   --------------------------------------------------------- */
+
+.ant-form-item-label > label {
+  color: var(--qk-text-secondary) !important;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+.ant-form-item-explain-error {
+  color: #f87171 !important;
+}
+
+/* ---------------------------------------------------------
+   27. CHECKBOX
+   --------------------------------------------------------- */
+
+.ant-checkbox-inner {
+  background: var(--qk-card) !important;
+
+  border-color: var(--qk-border-light) !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background: var(--qk-primary) !important;
+
+  border-color: var(--qk-primary) !important;
+}
+
+.ant-checkbox-wrapper {
+  color: var(--qk-text-secondary) !important;
+}
+
+/* ---------------------------------------------------------
+   28. RADIO
+   --------------------------------------------------------- */
+
+.ant-radio-inner {
+  background: var(--qk-card) !important;
+
+  border-color: var(--qk-border-light) !important;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: var(--qk-primary) !important;
+}
+
+.ant-radio-inner::after {
+  background: var(--qk-primary) !important;
+}
+
+.ant-radio-wrapper {
+  color: var(--qk-text-secondary) !important;
+}
+
+/* ---------------------------------------------------------
+   29. SWITCH
+   --------------------------------------------------------- */
+
+.ant-switch {
+  background: #3a3f4d !important;
+}
+
+.ant-switch.ant-switch-checked {
+  background: var(--qk-primary) !important;
+}
+
+/* ---------------------------------------------------------
+   30. SLIDER
+   --------------------------------------------------------- */
+
+.ant-slider-track {
+  background: var(--qk-primary) !important;
+}
+
+.ant-slider-handle::after {
+  box-shadow:
+    0 0 0 2px var(--qk-primary) !important;
+}
+
+.ant-slider-rail {
+  background: #343946 !important;
+}
+
+/* ---------------------------------------------------------
+   31. DATE / TIME PICKER
+   --------------------------------------------------------- */
+
+.ant-picker-input > input {
+  color: var(--qk-text) !important;
+}
+
+.ant-picker-suffix {
+  color: var(--qk-text-muted) !important;
+}
+
+.ant-picker-panel-container {
+  background: var(--qk-card) !important;
+
+  border: 1px solid var(--qk-border) !important;
+
+  box-shadow: var(--qk-shadow) !important;
+}
+
+.ant-picker-panel {
+  background: var(--qk-card) !important;
+}
+
+.ant-picker-content th,
+.ant-picker-content td {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-picker-cell-in-view {
+  color: var(--qk-text) !important;
+}
+
+.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: var(--qk-primary) !important;
+}
+
+/* ---------------------------------------------------------
+   32. PROGRESS
+   --------------------------------------------------------- */
+
+.ant-progress-text {
+  color: var(--qk-text) !important;
+}
+
+.ant-progress-bg {
+  background:
+    linear-gradient(
+      90deg,
+      var(--qk-primary),
+      var(--qk-blue)
+    ) !important;
+}
+
+/* ---------------------------------------------------------
+   33. BADGE
+   --------------------------------------------------------- */
+
+.ant-badge-count {
+  background: var(--qk-red) !important;
+
+  box-shadow:
+    0 0 0 2px var(--qk-background) !important;
+}
+
+/* ---------------------------------------------------------
+   34. AVATAR
+   --------------------------------------------------------- */
+
+.ant-avatar {
+  color: white !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--qk-primary),
+      var(--qk-blue)
+    ) !important;
+}
+
+/* ---------------------------------------------------------
+   35. TABS
+   --------------------------------------------------------- */
+
+.ant-tabs {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-tabs-tab {
+  color: var(--qk-text-muted) !important;
+}
+
+.ant-tabs-tab:hover {
+  color: var(--qk-primary-light) !important;
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--qk-primary-light) !important;
+}
+
+.ant-tabs-ink-bar {
+  background: var(--qk-primary) !important;
+}
+
+/* ---------------------------------------------------------
+   36. COLLAPSE
+   --------------------------------------------------------- */
+
+.ant-collapse {
+  background: transparent !important;
+
+  border-color: var(--qk-border) !important;
+}
+
+.ant-collapse-item {
+  border-color: var(--qk-border) !important;
+}
+
+.ant-collapse-header {
+  color: var(--qk-text) !important;
+}
+
+.ant-collapse-content {
+  background: var(--qk-card) !important;
+
+  border-color: var(--qk-border) !important;
+
+  color: var(--qk-text-secondary) !important;
+}
+
+/* ---------------------------------------------------------
+   37. STEPS
+   --------------------------------------------------------- */
+
+.ant-steps-item-title {
+  color: var(--qk-text) !important;
+}
+
+.ant-steps-item-description {
+  color: var(--qk-text-muted) !important;
+}
+
+.ant-steps-item-icon {
+  background: var(--qk-card) !important;
+
+  border-color: var(--qk-border-light) !important;
+}
+
+.ant-steps-item-icon .ant-steps-icon {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  background: var(--qk-primary) !important;
+
+  border-color: var(--qk-primary) !important;
+}
+
+.ant-steps-item-process .ant-steps-icon {
+  color: white !important;
+}
+
+/* ---------------------------------------------------------
+   38. TIMELINE
+   --------------------------------------------------------- */
+
+.ant-timeline-item-content {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-timeline-item-tail {
+  border-color: var(--qk-border) !important;
+}
+
+/* ---------------------------------------------------------
+   39. DESCRIPTIONS
+   --------------------------------------------------------- */
+
+.ant-descriptions-item-label {
+  background: #181b24 !important;
+
+  color: var(--qk-text-muted) !important;
+
+  border-color: var(--qk-border) !important;
+}
+
+.ant-descriptions-item-content {
+  background: var(--qk-card) !important;
+
+  color: var(--qk-text-secondary) !important;
+
+  border-color: var(--qk-border) !important;
+}
+
+/* ---------------------------------------------------------
+   40. UPLOAD
+   --------------------------------------------------------- */
+
+.ant-upload-wrapper .ant-upload-drag {
+  background: #151821 !important;
+
+  border-color: var(--qk-border) !important;
+
+  border-radius: 12px !important;
+}
+
+.ant-upload-wrapper .ant-upload-drag:hover {
+  border-color: var(--qk-primary) !important;
+}
+
+.ant-upload-text {
+  color: var(--qk-text) !important;
+}
+
+.ant-upload-hint {
+  color: var(--qk-text-muted) !important;
+}
+
+/* ---------------------------------------------------------
+   41. CALENDAR
+   --------------------------------------------------------- */
+
+.ant-picker-calendar {
+  background: transparent !important;
+
+  color: var(--qk-text) !important;
+}
+
+.ant-picker-calendar .ant-picker-panel {
+  background: var(--qk-card) !important;
+}
+
+.ant-picker-calendar .ant-picker-content th {
+  color: var(--qk-text-muted) !important;
+}
+
+.ant-picker-calendar .ant-picker-cell {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-picker-calendar .ant-picker-cell-in-view {
+  color: var(--qk-text) !important;
+}
+
+/* ---------------------------------------------------------
+   42. CAROUSEL
+   --------------------------------------------------------- */
+
+.ant-carousel .slick-dots li button {
+  background: var(--qk-text-muted) !important;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background: var(--qk-primary) !important;
+}
+
+/* ---------------------------------------------------------
+   43. RESULT PAGE
+   --------------------------------------------------------- */
+
+.ant-result-title {
+  color: var(--qk-text) !important;
+}
+
+.ant-result-subtitle {
+  color: var(--qk-text-secondary) !important;
+}
+
+/* ---------------------------------------------------------
+   44. TOOLTIP
+   --------------------------------------------------------- */
+
+.ant-tooltip .ant-tooltip-inner {
+  background: #252936 !important;
+
+  color: var(--qk-text) !important;
+
+  border: 1px solid var(--qk-border) !important;
+}
+
+/* ---------------------------------------------------------
+   45. NOTIFICATION
+   --------------------------------------------------------- */
+
+.ant-notification-notice {
+  background: var(--qk-card) !important;
+
+  border: 1px solid var(--qk-border) !important;
+
+  box-shadow: var(--qk-shadow) !important;
+}
+
+.ant-notification-notice-message {
+  color: var(--qk-text) !important;
+}
+
+.ant-notification-notice-description {
+  color: var(--qk-text-secondary) !important;
+}
+
+/* ---------------------------------------------------------
+   46. SPIN
+   --------------------------------------------------------- */
+
+.ant-spin-dot-item {
+  background: var(--qk-primary) !important;
+}
+
+/* ---------------------------------------------------------
+   47. MENU DROPDOWN
+   --------------------------------------------------------- */
+
+.ant-menu-submenu-popup {
+  background: var(--qk-card) !important;
+}
+
+.ant-menu-submenu-popup .ant-menu {
+  background: var(--qk-card) !important;
+
+  border: 1px solid var(--qk-border) !important;
+}
+
+/* ---------------------------------------------------------
+   48. TREE SELECT
+   --------------------------------------------------------- */
+
+.ant-select-tree {
+  background: var(--qk-card) !important;
+
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-select-tree-node-content-wrapper {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-select-tree-node-content-wrapper:hover {
+  background: var(--qk-card-hover) !important;
+}
+
+.ant-select-tree-node-selected {
+  background: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* ---------------------------------------------------------
+   49. TRANSFER
+   --------------------------------------------------------- */
+
+.ant-transfer-list {
+  background: var(--qk-card) !important;
+
+  border-color: var(--qk-border) !important;
+}
+
+.ant-transfer-list-header {
+  background: #181b24 !important;
+
+  border-color: var(--qk-border) !important;
+
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-transfer-list-content-item {
+  color: var(--qk-text-secondary) !important;
+}
+
+.ant-transfer-list-content-item:hover {
+  background: var(--qk-card-hover) !important;
+}
+
+/* ---------------------------------------------------------
+   50. DIVIDER
+   --------------------------------------------------------- */
+
+.ant-divider {
+  border-color: var(--qk-border) !important;
+}
+
+.ant-divider-inner-text {
+  color: var(--qk-text-muted) !important;
+}
+
+/* ---------------------------------------------------------
+   51. SCROLLBAR
+   --------------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--qk-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #343947;
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--qk-primary);
+}
+
+/* ---------------------------------------------------------
+   52. TEXT SELECTION
+   --------------------------------------------------------- */
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+
+  color: white;
+}
+
+/* ---------------------------------------------------------
+   53. RESPONSIVE DESIGN
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .quickkart-search {
+    width: 180px;
+  }
+
+  .quickkart-content-inner {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quickkart-header {
+    padding: 0 16px !important;
+  }
+
+  .quickkart-content-inner {
+    padding: 18px;
+  }
+
+  .quickkart-search {
+    display: none;
+  }
+
+  .quickkart-profile-info {
+    display: none;
+  }
+
+  .header-divider {
+    margin: 0 8px !important;
+  }
+
+  .quickkart-page-title {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .quickkart-header-right {
+    gap: 4px;
+  }
+
+  .quickkart-content-inner {
+    padding: 14px;
+  }
+
+  .quickkart-footer {
+    padding: 14px !important;
+  }
+}

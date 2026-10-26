@@ -1,0 +1,15 @@
+QUICKKART QUICK START
+
+Frontend:
+cd frontend
+npm install
+npm run dev
+
+Backend (second terminal):
+cd backend
+npm install
+copy .env.example .env
+npm run dev
+
+Frontend: http://localhost:5173
+Backend: http://localhost:5000/api/health
